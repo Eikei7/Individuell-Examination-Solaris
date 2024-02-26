@@ -12,6 +12,7 @@ body {
     width: auto;
     margin-left: auto;
     margin-right: auto;
+    /* overflow: hidden; */
     /* border: solid 2px white; */
   }
 
@@ -104,25 +105,60 @@ p {
   box-shadow: #D6D6E7 0 3px 7px inset;
   transform: translateY(2px);
 }
-.planet {
+.planet-page {
   display: flex;
-  justify-content: center;
-  align-content: center;
-  width: 70vw;
-  height: auto;
-  padding-top: 20vh;
-  padding-bottom: 20vh;
-  /* border: solid 2px white; */
+  flex-wrap: wrap;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+  height: 100%;
+  /* border: solid rgb(155, 69, 69) 5px; */
+}
+#planet-mercury, #planet-venus, #planet-earth, #planet-mars,
+ #planet-jupiter, #planet-saturn, #planet-uranus, #planet-neptune {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  padding-top: 30vh;
+  padding-bottom: 40vh;
+  border: solid 2px grey;
   position: relative;
+}
+.test {
+  position: relative;
+  width: 600px;
+  height: 100%;
+  margin-top: 10%;
+  margin-left: 50px;
+  margin-right: 50px;
+  /* padding-bottom: 25%; */
+  border: 2px solid white;
+}
+.info-text {
+  display: flex;
+  justify-content: right;
+  align-content: center;
+  text-align: center;
+  width: 40%;
+  height: auto;
+  padding: 5vh;
+  margin-right: 5vw;
+  border: solid 2px green;
+
 }
 .earth {
   display: block;
   border-radius: 50%;
-  margin: 30px auto 0;
   height: 200px;
   width: 200px;
   border: none;
   background-color: #003088;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   /* box-shadow: inset -10px -25px 20px rgba(0,0,0,.5); */
   background-image: -webkit-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);
   background-image: -moz-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);  
@@ -140,10 +176,16 @@ p {
 }
 
 .mercury {
-  /* display: block; */
+  display: block;
+  /* margin: 30px auto 0; */
+  /* margin-left: 25%; */
+  /* border: 2px solid white; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   width: 50px;
   height: 50px;
-  /* margin: 30px auto 0; */
   background-color: #b49175;
   border-radius: 50%;
   box-shadow: inset -10px -25px 20px rgba(0,0,0,.5);
@@ -152,30 +194,16 @@ p {
   background-image: -o-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);
   background-image: -ms-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);
 }
-.mercury-page {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
-  height: 100%;
-  /* border: solid white 5px; */
-}
-.mercury-facts {
-  width: 70vw; 
-  height: 50%;
-  padding: 20px;
-  text-align: center;
-  /* border: solid 2px white; */
-}
+
 .jupiter {
   display: block;
   width: 600px;
   height: 600px;
-  /* margin: 30px auto 0; */
-  transform: rotateZ(-15deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateZ(10deg);
+  /* transform: rotateZ(-15deg); */
   background: linear-gradient(#695747,
    #632b17, 
    #846748,
@@ -194,9 +222,12 @@ p {
   display: block;
   width: 200px;
   height: 200px;
-  /* margin: 30px auto 0; */
   background-color: #bc3f2d;
   border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
   background-image: -webkit-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);
   background-image: -moz-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);  
@@ -205,9 +236,13 @@ p {
 }
 .venus {
   display: block;
+  /* margin-top: 7%; */
   width: 100px;
   height: 100px;
-  /* margin: 30px auto 0; */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   background-color: #e5b25b;
   border-radius: 50%;
   box-shadow: inset -10px -25px 20px rgba(0,0,0,.5);
@@ -220,9 +255,12 @@ p {
   display: block;
   width: 300px;
   height: 300px;
-  /* margin: 30px auto 0; */
   background-color: #7f9eb6;
   border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
   background-image: -webkit-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);
   background-image: -moz-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);  
@@ -233,9 +271,12 @@ p {
   display: block;
   width: 250px;
   height: 250px;
-  /* margin: 30px auto 0; */
   background-color: #3b4ba3;
   border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
   background-image: -webkit-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);
   background-image: -moz-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);  
@@ -245,16 +286,14 @@ p {
 .saturn {
   background: linear-gradient(#63605c,
    #857d6a, #9a8260, #ffe2c3, #ae9369, #b69d81, #5c564c);
-  /* position: absolute; */
-  top: 0;
-  left: 70px;
-  transform: rotateZ(10deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateZ(10deg);
   box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
   display: block;
-  width: 450px;
-  height: 450px;
-  /* margin: 30px auto 0; */
-  /* background-color: #e5b25b; */
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
   box-shadow: inset -25px -25px 40px rgba(0,0,0,.5);
   /* background-image: -webkit-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%);
@@ -263,24 +302,35 @@ p {
   background-image: -ms-linear-gradient(-45deg, rgba(255,255,220,.2) 0%, transparent 100%); */
 }
 .saturn-ring {
-  z-index: 3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+  border: 50px solid transparent;
+  border-top-color: rgba(255, 255, 255, 0.5); /* Transparent white */
+  border-bottom-color: rgba(255, 255, 255, 0.5); /* Transparent white */
+  border-radius: 50%;
+  z-index: 2;
+  /* z-index: 4;
   position: absolute;
   top: 2%;
   left: 50%;
-  width: 20px;
+  width: 500px;
   border-radius: 10px;
   background: linear-gradient(#9b8261,
   #b69d81, #9b8261);
-transform: rotateZ(100deg);
-box-shadow:
-    inset 0 0 50px #63605c,      /* inner white */
-    inset 20px 0 80px #857d6a,   /* inner left magenta short */
-    inset -20px 0 80px #9a8260,  /* inner right cyan short */
-    inset 20px 0 300px #63605c,  /* inner left magenta broad */
-    inset -20px 0 300px #9a8260, /* inner right cyan broad */
-    0 0 10px #fff,           /*outer white */
-    5px 0 20px #fff,        /* outer left magenta */
-    10px 0 80px #fff;
+  transform: rotateZ(100deg);
+  box-shadow:
+    inset 0 0 50px #63605c,
+    inset 20px 0 80px #857d6a,
+    inset -20px 0 80px #9a8260,
+    inset 20px 0 300px #63605c,
+    inset -20px 0 300px #9a8260,
+    0 0 10px #fff,
+    5px 0 20px #fff,
+    10px 0 80px #fff; */
 }
 
 /* CODES KEEPING */

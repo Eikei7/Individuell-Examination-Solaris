@@ -8,26 +8,19 @@
 </head>
 <body>
     <header>
-    <h1>Solaris - A solar system model</h1>
+    <h1>Solaris - vårt solsystem</h1>
     </header>
-    <div id="text2">
-    </div>
-    <ul>
-        <li><a href="planets.html#planet-mercury">Mercury</a></li>
-        <li><a href="planets.html#planet-venus">Venus</a></li>
-        <li><a href="planets.html#planet-earth">Earth</a></li>
-        <li><a href="planets.html#planet-mars">Mars</a></li>
-        <li><a href="planets.html#planet-jupiter">Jupiter</a></li>
-        <li><a href="planets.html#planet-saturn">Saturn</a></li>
-        <li><a href="planets.html#planet-uranus">Uranus</a></li>
-        <li><a href="planets.html#planet-neptune">Neptune</a></li>
-    </ul>
+    <section class="main">
+            <input type="text" name="search" id="searchInput" class="search-input" placeholder="t.ex. Jorden">
+            <button type="submit" id="searchButton" class="btn-search" role="button">Sök himlakropp</button>
+        <br>
+        <ul id="searchResults"></ul>
+        <div id="searchResultsContainer"></div>
+    </section>
     <footer>
-        <form action="" method="get" class="search-form">
-        <input type="text" name="search" class="search-input">
-        <button type="submit" class="btn-search" role="button">Sök himlakropp</button>
-    </form>
+        
     </footer>
-    <script src="script.js"></script>
+    <!-- <script src="main.js"></script> -->
+    <script src="search.js"></script>
 </body>
 </html>

@@ -5,31 +5,33 @@ const authToken = 'solaris-NKsTcw3OPrMQPoSz';
 //En Fetch API med metoden GET som ordnar ihop URL:en tillsammans 
 //med API-nyckeln som angivits
 fetch(apiUrl, {
-  method:"GET", 
-  headers: {"x-zocom":authToken}
+  method: "GET",
+  headers: { "x-zocom": authToken }
 })
-.then(response => {
+  .then(response => {
 
-  //OM något problem uppstår längs vägen, visas detta meddelande
-  if (!response.ok) {
-    throw new Error('Fel vid nätverkssvar');
-  }
-  return response.json();
-})
-//Här hanteras all info från bodies-arrayen som återfanns i API:et
-.then(data => {
-  const bodies = data.bodies;
+    //OM något problem uppstår längs vägen, visas detta meddelande
+    if (!response.ok) {
+      throw new Error('Fel vid nätverkssvar');
+    }
+    return response.json();
+  })
+  //Här hanteras all info från bodies-arrayen som återfanns i API:et
+  .then(data => {
+    const bodies = data.bodies;
 
-  //En variabel skapas där alla positioner i arrayen får ett namn istället för nummer
-  const planetIds = ['sun','merc', 'venus', 'earth', 'mars', 'jup', 'sat', 'uran', 'nep'];
+    //En variabel skapas där alla positioner i arrayen får ett namn istället för nummer
+    const planetIds = ['sun', 'merc', 'venus', 'earth', 'mars', 'jup', 'sat', 'uran', 'nep'];
 
-  //En Foreach-loop som itererar över arrayen av planeter
-  planetIds.forEach((id, index) => {
+    //En Foreach-loop som itererar över arrayen av planeter
+    planetIds.forEach((id, index) => {
 
-    //Inuti slingan hämtar den planetobjektet som motsvarar 
-    //det aktuella indexet från "bodies"-arrayen och tilldelar det till body-variabeln.
-    const body = bodies[index];
-    let html = `
+      //Inuti slingan hämtar den planetobjektet som motsvarar 
+      //det aktuella indexet från "bodies"-arrayen och tilldelar det till body-variabeln.
+      const body = bodies[index];
+
+      //En variabel skapas som lagrar viss information från varje planets egenskaper
+      let html = `
       <h1 class="title" style="text-transform: uppercase;">${body.name}</h1>
       <h3>${body.latinName}</h3>
       <p>${body.desc}</p>
@@ -42,14 +44,14 @@ fetch(apiUrl, {
         <li><strong><a href="index.html">Tillbaka till planetsök</a><strong></li>
       </ul>
     `;
-    //Raden nedanför sätter innerHTML-egenskaperna av HTML-elementet med ID:et 
-    //info-${id} till den dynamiskt generade HTML-strängen som lagrats i HTML-variabeln
-    document.getElementById(`info-${id}`).innerHTML = html;
+      //Raden nedanför sätter innerHTML-egenskaperna av HTML-elementet med ID:et 
+      //info-${id} till den dynamiskt generade HTML-strängen som lagrats i HTML-variabeln
+      document.getElementById(`info-${id}`).innerHTML = html;
+    });
+    //Loggar funnen data ur API:et till konsollen för att visa vad den innehåller
+    console.log(data);
+  })
+  //Ett felmeddelande visas i konsollen om problem uppstår när fetch ska användas
+  .catch(error => {
+    console.error('Ett problem uppstod när "Fetch" skulle hämtas:', error);
   });
-  //Loggar funnen data ur API:et till konsollen för att visa vad den innehåller
-  console.log(data);
- })
-//Ett felmeddelande visas i konsollen om problem uppstår när fetch ska användas
-.catch(error => {
-  console.error('Ett problem uppstod när "Fetch" skulle hämtas:', error);
-});

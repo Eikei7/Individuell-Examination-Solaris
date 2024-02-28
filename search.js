@@ -24,24 +24,24 @@ function search(query) {
     const filteredData = data.filter(item => item.toLowerCase().includes(query.toLowerCase()));
 
     // Visar filtrerade resultat
-if (filteredData.length > 0) {
-    filteredData.forEach(item => {
-        const div = document.createElement('div');
-        const link = document.createElement('a');
-        link.textContent = ">> " + item + " <<";
-        link.href = 'planets.html#' + item.toLowerCase();
-        div.appendChild(link);
-        searchResults.appendChild(div);
-    });
-} else {
-    // Visar ett meddelande om sökningen inte matchar någon himlakropp
-    const message = document.createElement('div');
-    message.textContent = 'Ingen himlakropp funnen!';
-    message.style.color = 'white';
-    message.style.marginTop = '10px';
-    message.style.fontSize = '30px';
-    searchResults.appendChild(message);
-}
+    if (filteredData.length > 0) {
+        filteredData.forEach(item => {
+            const div = document.createElement('div');
+            const link = document.createElement('a');
+            link.textContent = ">> " + item + " <<";
+            link.href = 'planets.html#' + item.toLowerCase();
+            div.appendChild(link);
+            searchResults.appendChild(div);
+        });
+    } else {
+        // Visar ett meddelande om sökningen inte matchar någon himlakropp
+        const message = document.createElement('div');
+        message.textContent = 'Ingen himlakropp funnen!';
+        message.style.color = 'white';
+        message.style.marginTop = '10px';
+        message.style.fontSize = '30px';
+        searchResults.appendChild(message);
+    }
 }
 // Funktion för att hantera sökningar
 function handleSearch() {

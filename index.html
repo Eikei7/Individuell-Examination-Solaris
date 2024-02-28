@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,19 +8,25 @@
 </head>
 <body>
     <header>
-    <h1>Solaris - vårt solsystem</h1>
+    <h1>SOLARIS</h1>
+    <h2>Vårt solsystem</h2>
     </header>
     <section class="main">
+        <div id="search-box">
             <input type="text" name="search" id="searchInput" class="search-input" placeholder="t.ex. Jorden">
             <button type="submit" id="searchButton" class="btn-search" role="button">Sök himlakropp</button>
+        </div>
         <br>
-        <ul id="searchResults"></ul>
-        <div id="searchResultsContainer"></div>
+        <div id="searchResults"></div>
+        <div class="solar-system">
+            <div class="mini-sun"></div>
+            <div class="mini-earth"></div>
+        </div>
+        
     </section>
     <footer>
-        
+        <p class="text-footer">Erik Karlsson | FE23 | Folkuniversitetet Göteborg | 2024</p>
     </footer>
-    <!-- <script src="main.js"></script> -->
     <script src="search.js"></script>
 </body>
 </html>

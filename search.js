@@ -1,8 +1,9 @@
+//Icke-föränderliga variabler som kopplas till element i HTML med liknande namn
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
-const searchResultsContainer = document.getElementById('searchResultsContainer');
 const searchButton = document.getElementById('searchButton');
 
+//En icke-föränderlig variabel innehållandes en array med sökbara namn på planeter
 const data = [
     'Merkurius',
     'Venus',
@@ -14,35 +15,52 @@ const data = [
     'Neptunus',
     'Solen'
 ];
+//Sökfunktion
 function search(query) {
-    // Clear previous results
+    // Tömmer föregående sökresultat
     searchResults.innerHTML = '';
 
-    // Filter data based on query
+    // Filtrerar data baserat på sökterm
     const filteredData = data.filter(item => item.toLowerCase().includes(query.toLowerCase()));
 
-    // Display filtered results
+    // Visar filtrerade resultat
+if (filteredData.length > 0) {
     filteredData.forEach(item => {
-        const li = document.createElement('li');
+        const div = document.createElement('div');
         const link = document.createElement('a');
-        link.textContent = item;
-        link.href = 'planets.html#' + item.toLowerCase(); // Assuming you want to link to an anchor
-        li.appendChild(link);
-        searchResults.appendChild(li);
+        link.textContent = ">> " + item + " <<";
+        link.href = 'planets.html#' + item.toLowerCase();
+        div.appendChild(link);
+        searchResults.appendChild(div);
     });
-
-    // Show the search results container
-    searchResultsContainer.style.display = 'block';
+} else {
+    // Visar ett meddelande om sökningen inte matchar någon himlakropp
+    const message = document.createElement('div');
+    message.textContent = 'Ingen himlakropp funnen!';
+    message.style.color = 'white';
+    message.style.marginTop = '10px';
+    message.style.fontSize = '30px';
+    searchResults.appendChild(message);
 }
-
-searchButton.addEventListener('click', () => {
+}
+// Funktion för att hantera sökningar
+function handleSearch() {
     const query = searchInput.value.trim();
     if (query.length > 0) {
         search(query);
     } else {
-        // Clear search results if query is empty
+        // Tömmer sökresultat om det inte finns någon sökterm
         searchResults.innerHTML = '';
-        // Hide the search results container
-        searchResultsContainer.style.display = 'none';
+    }
+}
+//Event listener som "lyssnar" efter klick och sätter igång funktionen
+//"handleSearch" vid klick
+searchButton.addEventListener('click', handleSearch);
+
+//Event listener som "lyssnar" efter tryck på ENTER och sätter igång funktionen
+//"handleSearch" vid tangenttryck
+searchInput.addEventListener('keydown', event => {
+    if (event.key === 'Enter') {
+        handleSearch();
     }
 });

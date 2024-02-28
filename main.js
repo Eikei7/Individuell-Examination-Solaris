@@ -1,6 +1,6 @@
 //Variabler som innehåller API-URL och API-nyckel
 const apiUrl = 'https://n5n3eiyjb0.execute-api.eu-north-1.amazonaws.com/bodies';
-const authToken = 'solaris-2ngXkR6S02ijFrTP';
+const authToken = 'solaris-NKsTcw3OPrMQPoSz';
 
 //En Fetch API med metoden GET som ordnar ihop URL:en tillsammans 
 //med API-nyckeln som angivits

@@ -81,9 +81,7 @@ h3 {
   text-transform: uppercase;
 }
 
-p,
-ul,
-li {
+p, ul, li {
   font-weight: 100;
   text-align: left;
   padding-top: 10px;
@@ -181,13 +179,7 @@ li {
   height: 100%;
 }
 
-#merkurius,
-#jorden,
-#mars,
-#jupiter,
-#saturnus,
-#uranus,
-#neptunus {
+#merkurius, #jorden, #mars, #jupiter, #saturnus, #uranus, #neptunus {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -233,33 +225,23 @@ li {
   margin-right: 50px;
 }
 
-#info-merc,
-#info-venus,
-#info-earth,
-#info-mars,
-#info-jup,
-#info-sat,
-#info-uran,
-#info-nep {
+#info-merc, #info-venus, #info-earth, #info-mars, #info-jup, #info-sat, #info-uran, #info-nep {
   width: 40%;
   height: 10%;
   padding: 3vh;
   margin-right: 5vw;
-
 }
-
 #info-sun {
   width: 40%;
   height: 10%;
   padding: 3vh;
   margin-right: 5vw;
 }
-
 .sun {
   width: 2500px;
   height: 2500px;
   position: absolute;
-  bottom: -300%;
+  bottom: -275%;
   left: 50%;
   transform: translate(-50%, 50%);
   background: #f69d3c;

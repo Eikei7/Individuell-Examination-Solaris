@@ -1,5 +1,5 @@
-@import url(https://fonts.googleapis.com/css?family=Fira+Sans:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
-@import url(https://fonts.googleapis.com/css?family=JetBrains+Mono:100,200,300,regular,500,600,700,800,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic);
+@import url(https://fonts.googleapis.com/css?family=Fira+Sans:100,100italic,200,200italic,700,regular,italic);
+@import url(https://fonts.googleapis.com/css?family=JetBrains+Mono:100,100italic,200,200italic,regular,italic);
 
 :root {
   --primary-color: #001337;
@@ -49,20 +49,14 @@ footer {
   font-size: 1.3rem;
 }
 
-.title,
-h1,
-h2,
-h3,
-p,
-ul,
-li,
-a {
+.title, h1, h2, h3, p, ul, li, a {
   font-family: 'Fira Sans', sans-serif;
   color: white;
 }
 
 h1 {
   font-size: 6rem;
+  font-weight: 700;
   text-align: left;
   margin: 0;
   text-transform: uppercase;
@@ -92,16 +86,18 @@ li {
 }
 
 .search-input {
-  height: 40px;
-  font-size: 20px;
+  height: 50px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 1.3rem;
   margin: 10px;
   border-radius: 7px;
   padding: 5px;
+  background-color: #FCFCFD;
 }
 
 #searchResults a {
   color: var(--accent-color);
-  font-size: 50px;
+  font-size: 2.5rem;
   text-decoration: none;
   letter-spacing: -2px;
   text-transform: uppercase;
@@ -124,6 +120,8 @@ li {
     0 15px 0 #121212,
     0 22px 30px rgba(0, 0, 0, 0.9);
 }
+
+/* Sökknapp */
 
 .btn-search {
   align-items: center;
@@ -152,7 +150,7 @@ li {
   touch-action: manipulation;
   white-space: nowrap;
   will-change: box-shadow, transform;
-  font-size: 18px;
+  font-size: 1.2rem;
 }
 
 .btn-search:focus {
@@ -179,6 +177,8 @@ li {
   height: 100%;
 }
 
+/* PLANET-DIV:AR som innehåller planeten plus infotext */
+
 #merkurius, #jorden, #mars, #jupiter, #saturnus, #uranus, #neptunus {
   display: flex;
   flex-wrap: wrap;
@@ -188,6 +188,8 @@ li {
   padding-top: 20vh;
   position: relative;
 }
+
+/* Venus satte jag som egen div p.g.a. att den hade lite längre beskrivning som ställde till stylingen */
 
 #venus {
   display: flex;
@@ -216,15 +218,6 @@ li {
   position: relative;
 }
 
-.planet-div {
-  position: relative;
-  width: 600px;
-  height: 100%;
-  margin-top: 10%;
-  margin-left: 50px;
-  margin-right: 50px;
-}
-
 #info-merc, #info-venus, #info-earth, #info-mars, #info-jup, #info-sat, #info-uran, #info-nep {
   width: 40%;
   height: 10%;
@@ -237,17 +230,29 @@ li {
   padding: 3vh;
   margin-right: 5vw;
 }
-.sun {
-  width: 2500px;
-  height: 2500px;
+
+.planet-div {
+  position: relative;
+  width: 600px;
+  height: 100%;
+  margin-top: 10%;
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+/* ALLA PLANETER NEDAN */
+
+.mercury {
   position: absolute;
-  bottom: -275%;
+  top: 50%;
   left: 50%;
-  transform: translate(-50%, 50%);
-  background: #f69d3c;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background-color: #b49175;
   border-radius: 50%;
-  box-shadow: inset -25px -25px 40px rgba(0, 0, 0, .5);
-  filter: blur(3px);
+  box-shadow: inset -10px -25px 20px rgba(0, 0, 0, .5);
+  background-image: radial-gradient(circle at 0%, rgba(255, 255, 220, .2) 0%, transparent 100%);
 }
 
 .earth {
@@ -263,14 +268,14 @@ li {
   transform: translate(-50%, -50%);
 }
 
-.mercury {
+.venus {
+  width: 100px;
+  height: 100px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50px;
-  height: 50px;
-  background-color: #b49175;
+  background-color: #e5b25b;
   border-radius: 50%;
   box-shadow: inset -10px -25px 20px rgba(0, 0, 0, .5);
   background-image: radial-gradient(circle at 0%, rgba(255, 255, 220, .2) 0%, transparent 100%);
@@ -310,17 +315,32 @@ li {
   background-image: radial-gradient(circle at 0%, rgba(255, 255, 220, .2) 0%, transparent 100%);
 }
 
-.venus {
-  width: 100px;
-  height: 100px;
+.saturn {
+  background: linear-gradient(#63605c,
+      #857d6a, #9a8260, #ffe2c3, #ae9369, #b69d81, #5c564c);
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: #e5b25b;
+  transform: translate(-50%, -50%) rotateZ(20deg);
+  box-shadow: inset -25px -25px 40px rgba(0, 0, 0, .5);
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
-  box-shadow: inset -10px -25px 20px rgba(0, 0, 0, .5);
-  background-image: radial-gradient(circle at 0%, rgba(255, 255, 220, .2) 0%, transparent 100%);
+  box-shadow: inset -25px -25px 40px rgba(0, 0, 0, .5);
+}
+
+.saturn-ring {
+  width: 900px;
+  height: 150px;
+  background: transparent;
+  border: 40px solid #F0EAD6;
+  border-radius: 50%;
+  position: absolute;
+  top: -70px;
+  left: -130px;
+  transform: rotate(25deg);
+  z-index: -1;
+  filter: blur(3px);
 }
 
 .uranus {
@@ -349,33 +369,20 @@ li {
   background-image: radial-gradient(circle at 0%, rgba(255, 255, 220, .2) 0%, transparent 100%);
 }
 
-.saturn {
-  background: linear-gradient(#63605c,
-      #857d6a, #9a8260, #ffe2c3, #ae9369, #b69d81, #5c564c);
+.sun {
+  width: 2500px;
+  height: 2500px;
   position: absolute;
-  top: 50%;
+  bottom: -275%;
   left: 50%;
-  transform: translate(-50%, -50%) rotateZ(20deg);
-  box-shadow: inset -25px -25px 40px rgba(0, 0, 0, .5);
-  width: 500px;
-  height: 500px;
+  transform: translate(-50%, 50%);
+  background: #f69d3c;
   border-radius: 50%;
   box-shadow: inset -25px -25px 40px rgba(0, 0, 0, .5);
-}
-
-.saturn-ring {
-  width: 900px;
-  height: 150px;
-  background: transparent;
-  border: 40px solid #F0EAD6;
-  border-radius: 50%;
-  position: absolute;
-  top: -70px;
-  left: -130px;
-  transform: rotate(25deg);
-  z-index: -1;
   filter: blur(3px);
 }
+
+/* Minisolsystem som visas på framsidan som animation */
 
 .solar-system {
   width: 300px;
